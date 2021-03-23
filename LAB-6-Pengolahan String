@@ -1,0 +1,60 @@
+# 71200595 Gerry Sunjay Junjung
+# Kalimat yang ingin di test:
+# 22 3 Apa, itu woy?
+# Pesan moral dari Kumpulan Cerita Pendek Untuk Anak : Dongeng Hyena adalah jangan suka meniru-niru orang lain, jadilah dirimu sendiri. 
+# Sesuatu yang berhasil dilakukan oleh orang lain, belum tentu bisa kamu lakukan dengan hasil yang sama.
+print ('========== Selection Word Checking ==========')
+# Inisialisasi Pencarian
+jumlah_kata = 0
+jumlah_karakter = 0
+jumlah_huruf = 0
+tanda_baca = 0
+jumlah_kalimat = 0
+jumlah_nospasi = 0
+jumlah_denganspasi = 0
+jumlah_angka = 0
+n = 1
+masuk = str(input("Masukkan Kalimat Yang Ingin Dicek: ")) #Inputan user
+# Pilihan pencarian
+print ('1. Hitung Jumlah Kalimat')
+print ('2. Hitung Jumlah Karakter Dengan Spasi')
+print ('3. Hitung Jumlah Karakter No Spasi')
+print ('4. Hitung Jumlah Tanda Baca')
+print ('5. Jumlah Angka')
+print ('6. Jumlah Huruf')
+# Rumus Pencarian
+for line in masuk:
+    kata = line.split()
+    jumlah_denganspasi += len(line)
+    jumlah_nospasi += len(kata)
+    tanda_baca += line.count('.') + line.count('!') + line.count('?') + line.count(',') + line.count("'") + line.count(':') + line.count('-')
+    jumlah_kalimat += line.count('.')
+    jumlah_angka += line.count('1') + line.count('2') + line.count('3') + line.count('4') + line.count('5') + line.count('6') + line.count('7') + line.count('8') + line.count('9') + line.count('0')
+    jumlah_huruf = jumlah_nospasi - tanda_baca - jumlah_angka
+pilih = int(input("Masukkan Pilihan Yang Ingin Dicari: "))
+while n <= 7 :
+    if pilih == 1:
+        print ('Terdapat : ',jumlah_kalimat,' Kalimat')
+    elif pilih == 2:
+        print ('Terdapat : ',jumlah_denganspasi,' Karakter')
+    elif pilih == 3:
+        print ('Tedapat : ',jumlah_nospasi,' Karakter Tanpa Spasi')
+    elif pilih == 4:
+        print ('Terdapat : ',tanda_baca,' Tanda Baca')
+    elif pilih == 5:
+        print ('Terdapat : ',jumlah_angka,' Digit Angka')
+    elif pilih == 6:
+        print ('Terdapat : ',jumlah_huruf,' Huruf')
+    else:
+        print ('Maaf Input Yang Anda Masukkan Salah')
+        print ('Silahkan Coba Lagi')
+    print ('1. Lanjutkan')
+    print ('2. Stop')
+    print ('Klik 1 Untuk Lanjutkan dan Klik 2 Jika Tidak/Stop')
+    lagi = int(input("Apakah Anda Ingin Melanjutkan Pencarian? "))
+    if lagi == 1:
+        pilih = int(input("Masukkan Pilihan Yang Ingin Dicari: "))
+    else:
+        break
+    n += 1
+print('Pencarian Sudah Melebihii Batas, Silahkan Inputkan Ulang')
